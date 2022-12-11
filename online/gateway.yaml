@@ -15,4 +15,4 @@ spec:
       mode: SIMPLE
       credentialName: domain-secret
     hosts:
-    - "colour.avenger.com"
+    - "*"
