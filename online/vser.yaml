@@ -1,0 +1,26 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: istio-virtual-ingress
+spec:
+  hosts:
+    - "*"
+  gateways: 
+  - istio-ingress-gateway
+  http:
+  - name: store-route
+    match: 
+    - uri:
+       prefix: "/store"
+    rewrite:
+      uri: "/"
+    route:
+    - destination:
+        host: store-service.default.svc.cluster.local
+        subset: app-service-storeuri
+
+  - name: rest-route
+    route:
+    - destination:
+        host: rest-service.default.svc.cluster.local
+        subset: app-service-resturi

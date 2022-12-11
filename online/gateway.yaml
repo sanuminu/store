@@ -1,0 +1,18 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: istio-ingress-gateway
+spec:
+  selector:
+    istio: ingressgateway 
+    app: istio-ingressgateway
+  servers:
+  - port:
+      number: 443
+      name: https
+      protocol: HTTPS
+    tls: 
+      mode: SIMPLE
+      credentialName: domain-secret
+    hosts:
+    - "colour.avenger.com"

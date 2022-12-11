@@ -1,0 +1,20 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: store-service
+  labels:
+    app: store
+    version: v1
+    topic: traffic-management
+    chapter: istio
+spec:
+  selector:
+    app: store
+    version: v1
+    chapter: istio
+    topic: traffic-management
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+  type: ClusterIP
