@@ -7,7 +7,7 @@ spec:
   subsets:
   - name: app-service-flaskuri
     labels:
-      app: rest
+      app: tasksapp
       chapter: istio
       topic: traffic-management
       version: v1
