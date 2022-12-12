@@ -29,8 +29,8 @@ spec:
     - destination:
         host: rest-service.default.svc.cluster.local
         subset: app-service-resturi
-  - name: flask-route
-    route:
-    - destination:
-        host: tasksapp-svc.default.svc.cluster.local
+  #- name: flask-route
+    #route:
+    #- destination:
+    #    host: tasksapp-svc.default.svc.cluster.local
         subset: app-service-flaskuri
