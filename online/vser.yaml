@@ -33,4 +33,4 @@ spec:
     #route:
     #- destination:
     #    host: tasksapp-svc.default.svc.cluster.local
-        subset: app-service-flaskuri
+     #   subset: app-service-flaskuri
