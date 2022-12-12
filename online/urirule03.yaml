@@ -8,9 +8,9 @@ spec:
   - name: app-service-flaskuri
     labels:
       app: tasksapp
-      chapter: istio
-      topic: traffic-management
-      version: v1
+      #chapter: istio
+      #topic: traffic-management
+      #version: v1
     trafficPolicy:
       loadBalancer:
         simple: ROUND_ROBIN
