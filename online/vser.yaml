@@ -43,6 +43,6 @@ spec:
   - name: flask-login
     route:
     - destination:
-        host: flask-service-svc.default.svc.cluster.local
+        host: flask-service.default.svc.cluster.local
         subset: flask-service-flaskuri
   
