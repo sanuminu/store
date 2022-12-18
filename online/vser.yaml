@@ -30,7 +30,19 @@ spec:
         host: rest-service.default.svc.cluster.local
         subset: app-service-resturi
   - name: flask-route
+    match:
+    - uri:
+       prefix: "/task"
+    rewrite:
+      uri: "/"
     route:
     - destination:
         host: tasksapp-svc.default.svc.cluster.local
         subset: app-service-flaskuri
+ 
+  - name: flask-login
+    route:
+    - destination:
+        host: flask-service-svc.default.svc.cluster.local
+        subset: flask-service-flaskuri
+  
