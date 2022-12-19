@@ -39,6 +39,16 @@ spec:
     - destination:
         host: tasksapp-svc.default.svc.cluster.local
         subset: app-service-flaskuri
+  - name: grafana-route
+    match:
+    - uri:
+       prefix: "/grafana"
+    rewrite:
+      uri: "/"
+    route:
+    - destination:
+        host: stable-grafana.prometheus.svc.cluster.local
+        subset: grafana-service-grafanauri
  
   - name: flask-login
     route:

@@ -1,0 +1,13 @@
+apiVersion: networking.istio.io/v1beta1
+kind: DestinationRule
+metadata:
+  name: grafana-service-dsrule-01
+spec:
+  host: stable-grafana.prometheus.svc.cluster.local
+  subsets:
+  - name: grafana-service-grafanauri
+    labels:
+      app.kubernetes.io/name: grafana
+    trafficPolicy:
+      loadBalancer:
+        simple: ROUND_ROBIN
