@@ -4,7 +4,7 @@ metadata:
   name: istio-virtual-ingress
 spec:
   hosts:
-    - "demo.trial.com"
+    - demo.trial.com
   gateways: 
   - istio-ingress-gateway
   http:
